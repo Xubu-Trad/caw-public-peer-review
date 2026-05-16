@@ -1,0 +1,50 @@
+--- /home/xubutrad/gilg/OUT/GILGAMESH_MANIFESTO_AUDIT_V1/repo/Caw/client/src/services/FrontEnd/package.json
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "typecheck": "tsc -b",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+--- /home/xubutrad/gilg/OUT/GILGAMESH_MANIFESTO_AUDIT_V1/repo/Caw/client/package.json
+  "scripts": {
+    "migrate:filebase": "node -r ./dotenv-preload.js --import tsx src/tools/migrateMediaToFilebase.ts",
+    "prisma:push": "prisma db push --accept-data-loss",
+    "prisma:reset": "prisma db push --force-reset",
+    "prisma:migrate": "prisma migrate dev",
+    "test": "tsc --noEmit && mocha --import=tsx tests/**/*.test.ts",
+    "redis": "redis-server --port 6379 --appendonly yes",
+    "elasticsearch": "pkill -f elasticsearch 2>/dev/null; sleep 1; ~/elasticsearch/bin/elasticsearch",
+    "postgres": "pg_isready -q && echo 'PostgreSQL is already running' && tail -f /dev/null || PGDATA=${PGDATA:-$([ -d /opt/homebrew/var/postgres ] && echo /opt/homebrew/var/postgres || echo /usr/local/var/postgres)} && pg_ctl -D $PGDATA start && tail -f /dev/null",
+    "api": "npm run prisma:push && mkdir -p logs && (node -r ./file-polyfill.js -r tsx/cjs programs/start.ts 2>&1 | tee -a \"logs/caw-client-$(date +%Y-%m-%d).log\")",
+    "check-node": "export NVM_DIR=\"$HOME/.nvm\" && [ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\" && (nvm list | grep -q 'v22.0.0' || (echo 'Node.js 22.0.0 not found. Installing...' && nvm install 22.0.0))",
+    "web": "cd src/services/FrontEnd && export NVM_DIR=\"$HOME/.nvm\" && [ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\" && nvm use 22.0.0 && yarn dev",
+    "dev:api": "bash scripts/cleanup-processes.sh 2>/dev/null || true && npm run prisma:push && mkdir -p logs && tsx watch --clear-screen=false --exclude 'src/services/FrontEnd/**' programs/start.ts",
+    "start": "concurrently --restart-tries -1 --restart-after exponential \"npm run elasticsearch\" \"npm run redis\" \"npm run api\"",
+    "dev": "unset npm_config_prefix && export NVM_DIR=\"$HOME/.nvm\" && [ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\" && (nvm list | grep -q 'v22.0.0' || nvm install 22.0.0) && nvm use 22.0.0 && node scripts/dev-runner.js",
+    "stop": "pkill -9 -f 'programs/start.ts' 2>/dev/null; pkill -9 -f 'nodemon' 2>/dev/null; pkill -9 -f 'dev-api-runner' 2>/dev/null; pkill -9 -f 'concurrently.*restart' 2>/dev/null; pkill -9 -f 'vite.*localhost' 2>/dev/null; pkill -f 'dev-runner.js' 2>/dev/null; pkill -f 'redis-server.*6379' 2>/dev/null; pkill -f 'elasticsearch' 2>/dev/null; if [ -f /tmp/caw-dev-runner.pid ]; then kill -9 $(cat /tmp/caw-dev-runner.pid) 2>/dev/null; rm -f /tmp/caw-dev-runner.pid; fi; echo 'All services stopped.'"
+  },
+--- /home/xubutrad/gilg/OUT/GILGAMESH_MANIFESTO_AUDIT_V1/repo/Caw/cli/package.json
+  "scripts": {
+    "start": "node bin/caw.js",
+    "install-node": "node bin/caw.js install"
+  },
+--- /home/xubutrad/gilg/OUT/GILGAMESH_MANIFESTO_AUDIT_V1/repo/Caw/solidity/package.json
+--- /home/xubutrad/gilg/OUT/GILGAMESH_MANIFESTO_AUDIT_V1/repo/Caw/package.json
+  "scripts": {
+    "dev": "cd client && npm run dev",
+    "stop": "cd client && npm run stop",
+    "start": "cd client && npm start",
+    "test": "cd client && npm test",
+    "web": "cd client && npm run web"
+  }
+--- /home/xubutrad/gilg/OUT/GILGAMESH_MANIFESTO_AUDIT_V1/repo/Caw/smltxt/dist-esm/package.json
+--- /home/xubutrad/gilg/OUT/GILGAMESH_MANIFESTO_AUDIT_V1/repo/Caw/smltxt/package.json
+  "scripts": {
+    "test": "tsc --noEmit && mocha --import=tsx tests/**/*.test.ts",
+    "build": "rm -rf dist dist-esm && tsc -p tsconfig.build.json && tsc -p tsconfig.esm.json && node scripts/finalize-esm.js",
+    "start": "tsx programs/main.ts",
+    "digest-posts": "tsx programs/digestPosts.ts",
+    "build-table-data": "tsx programs/buildTableData.ts",
+    "manual-test": "tsx programs/manualTest.ts"
+  },

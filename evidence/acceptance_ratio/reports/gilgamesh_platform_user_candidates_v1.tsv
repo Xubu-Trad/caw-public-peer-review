@@ -1,0 +1,82 @@
+chain	address	label	source_file	source_line	is_nft_like	is_action_like	nft_transfer_rows	nft_unique_receivers	nft_unique_token_ids_seen	action_normal_tx_rows	action_unique_direct_tx_senders	notes
+arbitrum_sepolia	0x360602c0dd788c18240249d4d9ed0451f8bd1ee5	ARCHIVE_ADDRESS	solidity/scripts/test-slash.js	19	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+arbitrum_sepolia	0x78569305b07972350ff55e1aa5d399adc9dcdda3	CAW_ACTIONS_ARCHIVE_ADDRESS	client/src/abi/addresses.ts.example	29	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+arbitrum_sepolia	0x3b2a9ac4f274ee6e73cbad198f80f455e70c3c05	UNKNOWN	client/src/abi/deployments.ts	84	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+arbitrum_sepolia	0x5bcbb34f51156d605331f9d6f76a44dea1d279e5	UNKNOWN	client/src/abi/deployments.ts	90	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+arbitrum_sepolia	0x3b2a9ac4f274ee6e73cbad198f80f455e70c3c05	_L2	solidity/.deploy-state.json	19	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+arbitrum_sepolia	0x5bcbb34f51156d605331f9d6f76a44dea1d279e5	_L2	solidity/.deploy-state.json	20	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+base_sepolia	0x701cae1460569acc64d69b0b757ae847e1565b94	CAW_ACTIONS_ADDRESS	client/src/abi/addresses.ts.example	24	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+base_sepolia	0x74de2ace81ec0be0b1dc7614679dc50254c4305f	CAW_ACTIONS_ADDRESS	solidity/scripts/test-slash.js	21	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+base_sepolia	0xaee8a40eede3c17da85339f97472c32618aea905	CAW_ACTIONS_MAINNET_ADDRESS	client/src/abi/addresses.ts.example	23	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+base_sepolia	0xb379a474c770cb5e7657c8ecc0ff2f7d2863b5bb	CAW_NAMES_L2_ADDRESS	client/src/abi/addresses.ts.example	21	True	False	0	0	0			
+base_sepolia	0xfb9d00d70c747995f2c9d3b31b998bc0c218a399	CAW_NAMES_L2_MAINNET_ADDRESS	client/src/abi/addresses.ts.example	22	True	False	0	0	0			
+base_sepolia	0x55c66cabf9766aefb3a770d9ea64e218df195d9b	L2A	solidity/scripts/l2_helpers.js	15	True	False	0	0	0			
+base_sepolia	0x56817dc696448135203c0556f702c6a953260411	L2A	solidity/scripts/helpers.js	38	True	False	0	0	0			
+base_sepolia	0x0000000000000000000000000000000000000000	L2M	solidity/test/multi-layer-test.js	636	True	True	0	0	0	0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+base_sepolia	0xa4d38428641e9285eb2798b418c8634a0fcb8131	L2M	solidity/scripts/helpers.js	19	True	False	0	0	0			
+base_sepolia	0xa99936edd087ce11824232ebd83b036c90163688	L2_L1	solidity/.deploy-state.json	13	True	False	0	0	0			
+base_sepolia	0x0c3e245f3939b4d9f30e088988dd9d7c8f86b11d	L2_L2	solidity/.deploy-state.json	5	True	False	0	0	0			
+base_sepolia	0xbb9c2a3e8222d13f9e8469bb71ce62c3c2e82941	L2_L2	solidity/.deploy-state.json	4	True	False	0	0	0			
+base_sepolia	0x0000000000000000000000000000000000000000	UNKNOWN	solidity/test/replication-reconstruct-test.js	254	True	True	0	0	0	0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+base_sepolia	0x0c3e245f3939b4d9f30e088988dd9d7c8f86b11d	UNKNOWN	client/src/abi/deployments.ts	82	True	False	0	0	0			
+base_sepolia	0x287b249b58bf65411d4da89dadef0e30496a0d4c	UNKNOWN	client/src/abi/deployments.ts	89	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+base_sepolia	0x4c49b7b1f3b02aa0a0121968a6bc30b593be7a19	UNKNOWN	solidity/scripts/helpers.js	39	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+base_sepolia	0x5674e4658b988ed9337dd0caa493c6aa908006af	UNKNOWN	client/src/abi/deployments.ts	83	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+base_sepolia	0x6b22437861ecc2ea93fecb742ea3bd5e1d3c7307	UNKNOWN	solidity/docs/TESTNET_MINTING.md	7	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+base_sepolia	0xa99936edd087ce11824232ebd83b036c90163688	UNKNOWN	client/src/abi/deployments.ts	69	True	False	0	0	0			
+base_sepolia	0xbb9c2a3e8222d13f9e8469bb71ce62c3c2e82941	UNKNOWN	client/src/abi/deployments.ts	88	True	False	0	0	0			
+base_sepolia	0xd20be35d2365c0f7daf563a47b29eb5a165c2007	UNKNOWN	client/src/abi/deployments.ts	79	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+base_sepolia	0xf2a38f77790773a09099cad81694cb813ede57de	UNKNOWN	solidity/test/zk-fixtures/groth16-fixture.json	5	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+base_sepolia	0xf3ff3891332be3cb0a28b94218b416454133b26f	UNKNOWN	solidity/scripts/l2_helpers.js	16	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+base_sepolia	0xfd0ade8a11bdd8771b3112c91294edb1597a1f4d	UNKNOWN	solidity/scripts/helpers.js	21	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+base_sepolia	0xd20be35d2365c0f7daf563a47b29eb5a165c2007	_L1	solidity/.deploy-state.json	16	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+base_sepolia	0x287b249b58bf65411d4da89dadef0e30496a0d4c	_L2	solidity/.deploy-state.json	18	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+base_sepolia	0x454450aa713a99b06ee4aa05ede5d80ca1bd3075	_L2	solidity/.deploy-state.json	22	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+base_sepolia	0x5674e4658b988ed9337dd0caa493c6aa908006af	_L2	solidity/.deploy-state.json	17	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+base_sepolia	0x8195a9a8a97658672d5384e19a763804d6e16639	_L2	solidity/.deploy-state.json	21	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+sepolia	0x14ffaceb52025d2a04f3fa997e3946b17eb28af2	CAW_NAMES_ADDRESS	client/src/abi/addresses.ts.example	16	True	False	0	0	0			
+sepolia	0xbe2329e895e0c8e2934c8b3096445c9a11c99d49	CAW_CHALLENGE_RELAY_ADDRESS	client/src/abi/addresses.ts.example	30	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+base_sepolia	0xbe2329e895e0c8e2934c8b3096445c9a11c99d49	CAW_CHALLENGE_RELAY_ADDRESS	client/src/abi/addresses.ts.example	30	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+arbitrum_sepolia	0xbe2329e895e0c8e2934c8b3096445c9a11c99d49	CAW_CHALLENGE_RELAY_ADDRESS	client/src/abi/addresses.ts.example	30	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+sepolia	0xbacef3de5a2c8036268df5a59c3cce2fbd533883	CAW_NAMES_MINTER_ADDRESS	client/src/abi/addresses.ts.example	18	True	False	0	0	0			
+base_sepolia	0xbacef3de5a2c8036268df5a59c3cce2fbd533883	CAW_NAMES_MINTER_ADDRESS	client/src/abi/addresses.ts.example	18	True	False	0	0	0			
+arbitrum_sepolia	0xbacef3de5a2c8036268df5a59c3cce2fbd533883	CAW_NAMES_MINTER_ADDRESS	client/src/abi/addresses.ts.example	18	True	False	0	0	0			
+sepolia	0x5696675ab8e8e82cbe46c805f47875cf836bfd2a	CAW_NAME_MARKETPLACE_ADDRESS	client/src/abi/addresses.ts.example	31	True	False	0	0	0			
+base_sepolia	0x5696675ab8e8e82cbe46c805f47875cf836bfd2a	CAW_NAME_MARKETPLACE_ADDRESS	client/src/abi/addresses.ts.example	31	True	False	0	0	0			
+arbitrum_sepolia	0x5696675ab8e8e82cbe46c805f47875cf836bfd2a	CAW_NAME_MARKETPLACE_ADDRESS	client/src/abi/addresses.ts.example	31	True	False	0	0	0			
+sepolia	0xb3ff59926e50596c1563bb703455050256e70951	RELAY_ADDRESS	solidity/scripts/test-slash.js	20	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+base_sepolia	0xb3ff59926e50596c1563bb703455050256e70951	RELAY_ADDRESS	solidity/scripts/test-slash.js	20	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+arbitrum_sepolia	0xb3ff59926e50596c1563bb703455050256e70951	RELAY_ADDRESS	solidity/scripts/test-slash.js	20	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+sepolia	0x1641b0c89b42d19d58f206b81b170325a3e160ad	UNKNOWN	solidity/scripts/helpers.js	20	True	False	0	0	0			
+base_sepolia	0x1641b0c89b42d19d58f206b81b170325a3e160ad	UNKNOWN	solidity/scripts/helpers.js	20	True	False	0	0	0			
+arbitrum_sepolia	0x1641b0c89b42d19d58f206b81b170325a3e160ad	UNKNOWN	solidity/scripts/helpers.js	20	True	False	0	0	0			
+sepolia	0x27108da237a5200fbcb3fc62ee08ee07d84a1331	UNKNOWN	solidity/docs/TESTNET_MINTING.md	20	True	False	0	0	0			
+base_sepolia	0x27108da237a5200fbcb3fc62ee08ee07d84a1331	UNKNOWN	solidity/docs/TESTNET_MINTING.md	20	True	False	0	0	0			
+arbitrum_sepolia	0x27108da237a5200fbcb3fc62ee08ee07d84a1331	UNKNOWN	solidity/docs/TESTNET_MINTING.md	20	True	False	0	0	0			
+sepolia	0x3100b1e890b7a4f3da0b6be0388a9b2aff9c8e79	UNKNOWN	client/src/abi/deployments.ts	72	True	False	0	0	0			
+base_sepolia	0x3100b1e890b7a4f3da0b6be0388a9b2aff9c8e79	UNKNOWN	client/src/abi/deployments.ts	72	True	False	0	0	0			
+arbitrum_sepolia	0x3100b1e890b7a4f3da0b6be0388a9b2aff9c8e79	UNKNOWN	client/src/abi/deployments.ts	72	True	False	0	0	0			
+sepolia	0x454450aa713a99b06ee4aa05ede5d80ca1bd3075	UNKNOWN	client/src/abi/deployments.ts	91	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+base_sepolia	0x454450aa713a99b06ee4aa05ede5d80ca1bd3075	UNKNOWN	client/src/abi/deployments.ts	91	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+arbitrum_sepolia	0x454450aa713a99b06ee4aa05ede5d80ca1bd3075	UNKNOWN	client/src/abi/deployments.ts	91	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+sepolia	0x56f0d5da1bc735e03d6a4cd988784ed498fd9ee3	UNKNOWN	solidity/docs/TESTNET_MINTING.md	11	True	False	0	0	0			
+base_sepolia	0x56f0d5da1bc735e03d6a4cd988784ed498fd9ee3	UNKNOWN	solidity/docs/TESTNET_MINTING.md	11	True	False	0	0	0			
+arbitrum_sepolia	0x56f0d5da1bc735e03d6a4cd988784ed498fd9ee3	UNKNOWN	solidity/docs/TESTNET_MINTING.md	11	True	False	0	0	0			
+sepolia	0x6404d1d3d878407a0977d99c832453f235da67c3	UNKNOWN	client/src/abi/deployments.ts	73	True	False	0	0	0			
+base_sepolia	0x6404d1d3d878407a0977d99c832453f235da67c3	UNKNOWN	client/src/abi/deployments.ts	73	True	False	0	0	0			
+arbitrum_sepolia	0x6404d1d3d878407a0977d99c832453f235da67c3	UNKNOWN	client/src/abi/deployments.ts	73	True	False	0	0	0			
+sepolia	0x8195a9a8a97658672d5384e19a763804d6e16639	UNKNOWN	client/src/abi/deployments.ts	85	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+base_sepolia	0x8195a9a8a97658672d5384e19a763804d6e16639	UNKNOWN	client/src/abi/deployments.ts	85	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+arbitrum_sepolia	0x8195a9a8a97658672d5384e19a763804d6e16639	UNKNOWN	client/src/abi/deployments.ts	85	False	True				0	0	Direct tx senders may be validators/relayers, not end users, because actions can be batched.
+sepolia	0x8d65d141a60b1e1136be62604783aade8e7290d9	UNKNOWN	client/src/abi/deployments.ts	71	True	False	0	0	0			
+base_sepolia	0x8d65d141a60b1e1136be62604783aade8e7290d9	UNKNOWN	client/src/abi/deployments.ts	71	True	False	0	0	0			
+arbitrum_sepolia	0x8d65d141a60b1e1136be62604783aade8e7290d9	UNKNOWN	client/src/abi/deployments.ts	71	True	False	0	0	0			
+sepolia	0x9fcbb3d6880cd3293f1a731fe6c958a6621a74bf	UNKNOWN	client/src/abi/deployments.ts	68	True	False	0	0	0			
+base_sepolia	0x9fcbb3d6880cd3293f1a731fe6c958a6621a74bf	UNKNOWN	client/src/abi/deployments.ts	68	True	False	0	0	0			
+arbitrum_sepolia	0x9fcbb3d6880cd3293f1a731fe6c958a6621a74bf	UNKNOWN	client/src/abi/deployments.ts	68	True	False	0	0	0			
+sepolia	0xec947761e38dbd47e53fe15adc5519ccf2cc7ea5	UNKNOWN	solidity/scripts/helpers.js	18	True	False	0	0	0			
+base_sepolia	0xec947761e38dbd47e53fe15adc5519ccf2cc7ea5	UNKNOWN	solidity/scripts/helpers.js	18	True	False	0	0	0			
+arbitrum_sepolia	0xec947761e38dbd47e53fe15adc5519ccf2cc7ea5	UNKNOWN	solidity/scripts/helpers.js	18	True	False	0	0	0			
+sepolia	0x9ceffadc838a39d10a241d9a473844ef0cb6274f	URI	client/src/abi/deployments.ts	74	True	False	0	0	0			
+base_sepolia	0x9ceffadc838a39d10a241d9a473844ef0cb6274f	URI	client/src/abi/deployments.ts	74	True	False	0	0	0			
+arbitrum_sepolia	0x9ceffadc838a39d10a241d9a473844ef0cb6274f	URI	client/src/abi/deployments.ts	74	True	False	0	0	0			

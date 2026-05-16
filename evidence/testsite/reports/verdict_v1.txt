@@ -1,0 +1,9 @@
+FACT base_url=https://test.caw.social/
+FACT fetched_assets=6
+FACT extracted_addresses=37
+FACT api_probe_rows=34
+FACT api_count_candidates=4
+FACT live_contract_rows=26
+FACT likely_user_count_contract_rows=2
+INFERENCE user_count_source_candidates=SEE reports/likely_user_count_contracts_v1.tsv
+STOP_CONDITION do_not_claim_real_user_count_until contract_address+chain+count_method are identified and independently reproduced

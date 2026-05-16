@@ -1,0 +1,6 @@
+'/home/xubutrad/gilg/OUT/GILGAMESH_MANIFESTO_AUDIT_V1/OUT_ACCEPTANCE_RATIO_V1/reports' -> 'evidence/acceptance_ratio/reports'
+'/home/xubutrad/gilg/OUT/GILGAMESH_MANIFESTO_AUDIT_V1/OUT_ACCEPTANCE_RATIO_V1/reports/gilgamesh_candidate_addresses_v1.tsv' -> 'evidence/acceptance_ratio/reports/gilgamesh_candidate_addresses_v1.tsv'
+'/home/xubutrad/gilg/OUT/GILGAMESH_MANIFESTO_AUDIT_V1/OUT_ACCEPTANCE_RATIO_V1/reports/official_caw_holder_count_sources_v1.tsv' -> 'evidence/acceptance_ratio/reports/official_caw_holder_count_sources_v1.tsv'
+'/home/xubutrad/gilg/OUT/GILGAMESH_MANIFESTO_AUDIT_V1/OUT_ACCEPTANCE_RATIO_V1/reports/gilgamesh_platform_user_candidates_v1.tsv' -> 'evidence/acceptance_ratio/reports/gilgamesh_platform_user_candidates_v1.tsv'
+'/home/xubutrad/gilg/OUT/GILGAMESH_MANIFESTO_AUDIT_V1/OUT_ACCEPTANCE_RATIO_V1/reports/acceptance_ratio_verdict_v1.txt' -> 'evidence/acceptance_ratio/reports/acceptance_ratio_verdict_v1.txt'
+'/home/xubutrad/gilg/OUT/GILGAMESH_MANIFESTO_AUDIT_V1/OUT_ACCEPTANCE_RATIO_V1/reports/provenance_sha256_acceptance_ratio_v1.txt' -> 'evidence/acceptance_ratio/reports/provenance_sha256_acceptance_ratio_v1.txt'

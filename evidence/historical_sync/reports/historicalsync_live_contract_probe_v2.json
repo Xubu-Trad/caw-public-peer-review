@@ -1,0 +1,17 @@
+[
+  {
+    "chain": "sepolia",
+    "error": "HTTP Error 403: Forbidden",
+    "rpc_status": "RPC_ERROR"
+  },
+  {
+    "chain": "base_sepolia",
+    "error": "HTTP Error 403: Forbidden",
+    "rpc_status": "RPC_ERROR"
+  },
+  {
+    "chain": "arbitrum_sepolia",
+    "error": "HTTP Error 403: Forbidden",
+    "rpc_status": "RPC_ERROR"
+  }
+]
