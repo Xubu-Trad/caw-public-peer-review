@@ -1,12 +1,13 @@
 REPO=Xubu-Trad/caw-public-peer-review
 REMOTE=git@github.com:Xubu-Trad/caw-public-peer-review.git
 BRANCH=main
-HEAD=6a1c8d346797ea4ff56ba523e77013327c313036
+HEAD=6410e8726bd21057e71055405a6f20ff1acbc39d
 STATUS_START
-?? reports/repo_publish_status_v1.txt
+ M reports/repo_publish_status_v1.txt
 STATUS_END
 RECENT_COMMITS_START
-6a1c8d3 (HEAD -> main, origin/main) refresh sha256 ledger after final repo files
+6410e87 (HEAD -> main, origin/main) add repo publish status
+6a1c8d3 refresh sha256 ledger after final repo files
 909717b add public summary draft
 d73f191 add public challenge
 0db638b add public review issue templates
