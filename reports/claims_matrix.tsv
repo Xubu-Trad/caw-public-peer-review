@@ -1,0 +1,9 @@
+claim_id	claim	status	evidence	required_to_close
+C01	Gilgamesh testsite has users	SUPPORTED	test.caw.social API stats showed totalUsers=2281 and activeUsersThisWeek=958	Verify again periodically and archive raw API response
+C02	Testsite users prove cawmmunity acceptance	NOT_SUPPORTED	Testsite users are a minority of CAW holder base	Show holder-wide review, voting, broad adoption, repeat active users, fee-paying wallets, and public acceptance process
+C03	Renouncing ownership makes the build decentralized	NOT_SUPPORTED	Renounce closes one local owner path only	Prove no remaining admin paths, upgrade paths, LayerZero trust/config paths, private indexer dependency, or frontend control dependency
+C04	LayerZero dependency is manifesto-compatible	UNPROVEN	LayerZero/OApp paths exist and require direct trust/config review	Publish endpoint, delegate, peer, trusted remote, message verification, and config finality proof
+C05	Historical sync proves record recoverability	UNPROVEN	Architecture references exist, but empty-DB deterministic rebuild proof is missing	Publish exact command, chain IDs, contract addresses, start blocks, RPC assumptions, DB export hash
+C06	caw.is is authority for accepted CAW	NOT_SUPPORTED	caw.is can be a frontend/manifesto surface but does not override deployer-linked receipts	Prove domain provenance, deployer authorization, and accepted protocol contract relation
+C07	cawdevelopment has no connection to CAW contract	CONTRADICTED	Deployer IDM receipt linked manifesto Pastebin and github.com/cawdevelopment	Produce stronger receipt disproving deployer link
+C08	Gilgamesh build is manifesto aligned	UNPROVEN	Current evidence shows unresolved peer review, admin, LayerZero, and reproducibility questions	Complete public review and close all control/reproducibility findings before mainnet acceptance
