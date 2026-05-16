@@ -1,21 +1,36 @@
 # CAW Public Peer Review Summary
 
-CAW has about 26.9k holders.
+This repository is a public, reproducible peer-review record comparing the Gilgamesh CAW build against the CAW manifesto standard.
 
-Gilgamesh's testsite shows 2,281 total users and 958 active users this week.
+It is not an official decree. CAW has no leader.
 
-That is about 8.5% of the holder base as total testsite users and about 3.6% as weekly active users.
+The current evidence supports that Gilgamesh has built real public software around a CAW-like social protocol stack and that the testsite has shown measurable usage. That matters.
 
-That ratio shows usage, not cawmmunity acceptance.
+But usage is not cawmmunity acceptance.
 
-The manifesto warned that in a leaderless process people will try to claim ownership, claim they can "do it all," and may write perfect code with the perfect backdoor. It says only a cawmmunity reviewed and accepted contract on a public GitHub is acceptable.
+A testnet user count, even if accurate, does not prove holder-wide review, accepted contracts, final mainnet bytecode, closed admin paths, LayerZero trust/config closure, or independent record recoverability.
 
-Current evidence does not close that standard.
+The manifesto standard is higher. It warns that in a leaderless process people will claim ownership and may offer to "do it all" while writing perfect code with the perfect backdoor. It says only a cawmmunity reviewed and accepted contract on a public GitHub is acceptable, and after deployment the deployer must renounce keys, with no multisig and no upgradeable proxies.
 
-The unresolved proof items are peer review before mainnet, verified deployed bytecode, closed admin/key surface, LayerZero trust/config review, independent historical rebuild, and proof the protocol path cannot be shaped by one builder, one frontend, one indexer, or one operator stack.
+Current status: **not proven manifesto-complete**.
 
-This repo is not an official decree.
+Current evidence supports:
 
-It is a public review record.
+- public code exists
+- testsite usage exists
+- major manifesto themes are being attempted
+- a peer review record now exists
 
-Bring receipts.
+Current evidence does not yet prove:
+
+- cawmmunity acceptance
+- final mainnet deployment
+- verified deployed bytecode matching reviewed source
+- closed owner/admin/config surface
+- LayerZero/OApp trust/config finality
+- independent fresh-node historical rebuild with deterministic export hash
+- a protocol path that cannot be shaped by one builder, frontend, indexer, validator, API, or operator stack
+
+The standard is simple:
+
+Show the proof. Hash the artifacts. Review in public. Correct what is wrong.
