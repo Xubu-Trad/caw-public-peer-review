@@ -1,12 +1,14 @@
 REPO=Xubu-Trad/caw-public-peer-review
 REMOTE=git@github.com:Xubu-Trad/caw-public-peer-review.git
+URL=https://github.com/Xubu-Trad/caw-public-peer-review
 BRANCH=main
-HEAD=6410e8726bd21057e71055405a6f20ff1acbc39d
+HEAD=6e25e75e1eabaadb543b69d4e667eeece16cb0e3
 STATUS_START
  M reports/repo_publish_status_v1.txt
 STATUS_END
 RECENT_COMMITS_START
-6410e87 (HEAD -> main, origin/main) add repo publish status
+6e25e75 (HEAD -> main, origin/main) add repo publish status
+6410e87 add repo publish status
 6a1c8d3 refresh sha256 ledger after final repo files
 909717b add public summary draft
 d73f191 add public challenge
@@ -20,3 +22,16 @@ bdbe1b4 add claims matrixcd
 RECENT_COMMITS_END
 LEDGER_SHA256=03da7f3e9c6ed3581c92d2f5d45c57027e838e7d83939c8573a6833ff6f91e4f
 LEDGER_SIZE=4903
+DESCRIPTION_START
+Public reproducible peer-review record for Gilgamesh CAW build vs CAW manifesto alignment.
+DESCRIPTION_END
+TOPICS_START
+a-hunters-dream
+caw
+decentralization
+forensics
+layerzero
+manifesto
+peer-review
+smart-contract-review
+TOPICS_END
