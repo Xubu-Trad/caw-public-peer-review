@@ -1,0 +1,21 @@
+REPO=Xubu-Trad/caw-public-peer-review
+REMOTE=git@github.com:Xubu-Trad/caw-public-peer-review.git
+BRANCH=main
+HEAD=6a1c8d346797ea4ff56ba523e77013327c313036
+STATUS_START
+?? reports/repo_publish_status_v1.txt
+STATUS_END
+RECENT_COMMITS_START
+6a1c8d3 (HEAD -> main, origin/main) refresh sha256 ledger after final repo files
+909717b add public summary draft
+d73f191 add public challenge
+0db638b add public review issue templates
+5002d97 add reproducibility guide
+3c4a948 add sha256 provenance ledger
+3356769 add copied proof artifacts from local audit
+3975fe3 add verified facts snapshot
+bdbe1b4 add claims matrixcd
+898789b init public CAW peer review record
+RECENT_COMMITS_END
+LEDGER_SHA256=03da7f3e9c6ed3581c92d2f5d45c57027e838e7d83939c8573a6833ff6f91e4f
+LEDGER_SIZE=4903
