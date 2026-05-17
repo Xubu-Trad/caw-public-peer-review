@@ -45,3 +45,21 @@ Verify the bytecode.
 Close the control paths.
 Prove the rebuild.
 Review in public.
+
+## Public trail / governance-context language
+
+Safe wording:
+
+Gilgamesh's public trail is relevant to the review because the manifesto warns about people claiming ownership of a leaderless process.
+
+Public statements about being a dev, referring to Maker, or using leader-style language should be treated as governance-context evidence, not as bytecode proof.
+
+The issue is not that someone built code.
+
+The issue is whether the build process, authority posture, and final technical architecture match a manifesto that rejects centralized control.
+
+Do not ignore the public trail.
+
+Do not overstate it.
+
+Use it as context, then require technical proof.

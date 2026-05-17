@@ -35,6 +35,20 @@ The review standard used here is:
 9. no single builder, frontend, indexer, validator, API, database, or operator stack that can practically shape the record alone,
 10. reproducible historical recovery from public chain data.
 
+## Public Trail Matters Too
+
+This review is mostly technical, but it does not ignore public history.
+
+Gilgamesh's public statements, supporter claims, references to Maker, leader-style language, and centralized build posture are relevant governance-context evidence because the manifesto itself warns that people will attempt to claim ownership of a leaderless process.
+
+This public trail does not prove criminal intent or official authority by itself.
+
+It does show why the cawmmunity should require receipts instead of assurances.
+
+See:
+
+- `docs/public_trail_and_governance_context.md`
+
 ## Current High-Level Findings
 
 ### 1. Gilgamesh testsite usage exists.
