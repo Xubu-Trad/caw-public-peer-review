@@ -54,6 +54,27 @@ See:
 
 - `docs/origin_authority_and_caw_token_addendum.md`
 
+## Medium Article Alignment
+
+The current Medium article adds a detailed section on public claims displayed by `test.caw.social`.
+
+Those claims are now mapped into this repo in:
+
+- `docs/testsite_public_claims_and_required_proofs.md`
+- `docs/medium_article_alignment_2026_05_17.md`
+
+The review boundary is simple:
+
+The testsite claims are public claims.
+
+They are material.
+
+They require proof.
+
+They are not treated as false.
+
+They are treated as unproven until independently verified.
+
 ## Public Trail Matters Too
 
 This review is mostly technical, but it does not ignore public history.

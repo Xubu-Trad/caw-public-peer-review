@@ -82,3 +82,21 @@ Base Sepolia owner signals do not prove Ethereum mainnet CAW custody.
 Public GitHub fork activity does not prove official builder authority.
 
 No proof means no authority by default.
+
+## Testsite public-claim language
+
+Safe wording:
+
+The testsite makes strong public claims about decentralization, permissionlessness, gasless actions, immutable contracts, no admin keys, LayerZero archiving, Arbitrum storage, and reconstructable action history.
+
+This review does not claim those public statements are false.
+
+This review records that those claims require independent proof.
+
+A website statement is not a verified control-surface audit.
+
+A homepage slogan is not bytecode proof.
+
+A help page is not an empty-database historical rebuild.
+
+Use the testsite claims as review targets, then require contracts, addresses, hashes, commands, and independent reruns.
