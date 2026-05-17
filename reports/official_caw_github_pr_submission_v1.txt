@@ -1,0 +1,16 @@
+OFFICIAL_CAW_GITHUB_PR_SUBMISSION_V1
+
+TARGET_REPO=cawdevelopment/CawUsernames
+TARGET_URL=https://github.com/cawdevelopment/CawUsernames
+ISSUES_ENABLED=false
+SUBMISSION_ROUTE=pull_request
+PR_URL=https://github.com/cawdevelopment/CawUsernames/pull/5
+PR_NUMBER=5
+PR_TITLE=Submit CAW public peer review record
+PR_STATE=open
+PR_BASE=master
+PR_HEAD=Xubu-Trad:submit-caw-public-peer-review
+PR_HEAD_COMMIT=bc4c282
+PEER_REVIEW_REPO=https://github.com/Xubu-Trad/caw-public-peer-review
+PEER_REVIEW_HEAD=4121ed5 record official CAW GitHub peer review submission
+RESULT=submitted_to_official_caw_github_for_acceptance_rejection_or_correction
