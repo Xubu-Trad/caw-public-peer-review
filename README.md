@@ -131,13 +131,13 @@ The required proof should include:
 
 Until that exists, “historical sync works” remains unproven as a decentralization claim.
 
-### 7. Peer review must happen before mainnet acceptance, not after.
+### 7. Peer review must happen before manifesto-aligned acceptance, not after.
 
 The manifesto standard is not “launch first and review later.”
 
 The standard is public GitHub, public review, cawmmunity acceptance, correct deployment, and then key renouncement or neutralization.
 
-A mainnet launch without completed public review does not become manifesto-aligned simply because it exists.
+A technical mainnet launch without completed public review does not become manifesto-aligned simply because it exists.
 
 ## Proof Pack Structure
 

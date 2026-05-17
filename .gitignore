@@ -1,0 +1,6 @@
+
+# Local privacy/security audit outputs. Do not commit.
+logs/privacy_audit_*.log
+reports/privacy_audit_*.txt
+reports/privacy_scan_*.txt
+reports/privacy_sensitive_filenames_*.txt

@@ -20,7 +20,7 @@ Renouncing one owner address is not enough; every owner, admin, proxy, config, L
 
 Independent historical recovery is not proven until a clean empty-database rebuild from public chain data produces deterministic export hashes.
 
-Peer review must happen before mainnet acceptance, not after.
+Peer review must happen before manifesto-aligned acceptance, not after.
 
 ## Avoid unless direct proof exists
 

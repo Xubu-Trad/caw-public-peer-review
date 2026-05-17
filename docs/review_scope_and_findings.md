@@ -163,7 +163,7 @@ The clean proof is:
 
 Until then, independent recoverability remains unproven.
 
-## Finding 6: Peer review must happen before mainnet acceptance.
+## Finding 6: Peer review must happen before manifesto-aligned acceptance.
 
 ### Status
 
