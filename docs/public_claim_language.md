@@ -63,3 +63,22 @@ Do not ignore the public trail.
 Do not overstate it.
 
 Use it as context, then require technical proof.
+
+
+## Origin / authority language
+
+Safe wording:
+
+The original CAW token and deployer trail are separate from GilgameshCaw/Caw app claims.
+
+The CAW token no-proxy/no-admin audit evidence is relevant, but it does not prove anything about Gilgamesh's app decentralization.
+
+The deployer IDM message linking the manifesto and `github.com/cawdevelopment` remains relevant and should not be ignored.
+
+Current evidence does not prove Gilgamesh controls the original CAW token or deployer.
+
+Base Sepolia owner signals do not prove Ethereum mainnet CAW custody.
+
+Public GitHub fork activity does not prove official builder authority.
+
+No proof means no authority by default.

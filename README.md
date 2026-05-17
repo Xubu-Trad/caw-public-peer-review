@@ -35,6 +35,25 @@ The review standard used here is:
 9. no single builder, frontend, indexer, validator, API, database, or operator stack that can practically shape the record alone,
 10. reproducible historical recovery from public chain data.
 
+## Origin And Authority Receipts Matter
+
+This review also includes an origin and authority addendum.
+
+That addendum separates the original CAW token and deployer receipt trail from GilgameshCaw/Caw app claims.
+
+The current bounded position is:
+
+- the original CAW token no-proxy/no-admin evidence matters,
+- the CAW deployer-message trail to the manifesto and `cawdevelopment` matters,
+- current evidence does not prove Gilgamesh controls the original CAW token or deployer,
+- Base Sepolia ownership signals do not prove Ethereum mainnet CAW custody,
+- public GitHub surface checks do not prove official builder status,
+- no proof means no authority by default.
+
+See:
+
+- `docs/origin_authority_and_caw_token_addendum.md`
+
 ## Public Trail Matters Too
 
 This review is mostly technical, but it does not ignore public history.
