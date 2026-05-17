@@ -290,6 +290,25 @@ That does not prove decentralization.
 
 The current review position is:
 
-**Real build. Real usage. Missing final proof.**
+**Under review.
+
+Not proven manifesto complete.
+
+No proof means no authority.
+
+The record has been submitted to the official CAW GitHub for acceptance, rejection, or correction.**
 
 Show the proof. Hash the artifacts. Review in public. Correct what is wrong.
+
+## Official CAW GitHub Submission
+
+The peer-review record has been formally submitted to the CAW GitHub for acceptance, rejection, or correction.
+
+Issues were disabled on `cawdevelopment/CawUsernames`, so the submission was made by pull request.
+
+Official submission:
+
+Submission receipt:
+
+Current submission status:
+
