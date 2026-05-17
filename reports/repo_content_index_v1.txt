@@ -1,0 +1,43 @@
+CAW_PUBLIC_PEER_REVIEW_V1 content index
+
+README.md
+Primary public entry point.
+
+docs/review_scope_and_findings.md
+Detailed novice-readable and technically narrowed findings.
+
+docs/public_claim_language.md
+Approved public claim wording and claim boundaries.
+
+docs/public_summary_draft.md
+Short public summary draft.
+
+docs/public_challenge_to_gilgamesh.md
+Proof challenge and missing-proof checklist.
+
+docs/manifesto_standard.md
+Manifesto standard used by the review.
+
+reports/claims_matrix.tsv
+Machine-readable claim matrix.
+
+reports/claims_matrix_readable.md
+Human-readable claim matrix.
+
+reports/verified_facts.md
+Current verified facts snapshot.
+
+reports/current_state_amendment_2026_05_16.md
+Amendment acknowledging current Gilgamesh repo activity.
+
+reports/current_github_state_v1.txt
+GitHub state verification snapshot.
+
+ledgers/SHA256SUMS.tsv
+SHA-256 ledger for repo files.
+
+reproducibility/README.md
+Rerun and verification guide.
+
+.github/ISSUE_TEMPLATE/
+Public issue templates for evidence challenges and missing-proof submissions.
