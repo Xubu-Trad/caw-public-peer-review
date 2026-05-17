@@ -300,6 +300,7 @@ The record has been submitted to the official CAW GitHub for acceptance, rejecti
 
 Show the proof. Hash the artifacts. Review in public. Correct what is wrong.
 
+
 ## Official CAW GitHub Submission
 
 The peer-review record has been formally submitted to the CAW GitHub for acceptance, rejection, or correction.
@@ -308,7 +309,14 @@ Issues were disabled on `cawdevelopment/CawUsernames`, so the submission was mad
 
 Official submission:
 
+- `https://github.com/cawdevelopment/CawUsernames/pull/5`
+
 Submission receipt:
 
+- `reports/official_caw_github_pr_submission_v1.txt`
+
 Current submission status:
+
+- submitted by pull request
+- pending acceptance, rejection, or correction
 
