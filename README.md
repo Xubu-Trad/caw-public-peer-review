@@ -301,6 +301,31 @@ The record has been submitted to the official CAW GitHub for acceptance, rejecti
 Show the proof. Hash the artifacts. Review in public. Correct what is wrong.
 
 
+
+## Whitepaper Claims Review
+
+The GilgameshCaw/Caw whitepaper is now recorded as a technical claim source.
+
+The whitepaper is useful because it gives specific claims that can be tested.
+
+It is not treated as proof by itself.
+
+Whitepaper claims are tracked in:
+
+- `docs/whitepaper_claims_and_required_proofs.md`
+- claims `C32` through `C42` in `reports/claims_matrix_readable.md`
+
+The review boundary is:
+
+A whitepaper is not deployed bytecode.
+
+A contract on `master` is not a verified deployed contract.
+
+A future renounce is not a current closed control surface.
+
+A design description is not an empty-database rebuild.
+
+
 ## Official CAW GitHub Submission
 
 The peer-review record has been formally submitted to the CAW GitHub for acceptance, rejection, or correction.

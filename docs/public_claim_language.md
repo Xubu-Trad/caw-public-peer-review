@@ -100,3 +100,31 @@ A homepage slogan is not bytecode proof.
 A help page is not an empty-database historical rebuild.
 
 Use the testsite claims as review targets, then require contracts, addresses, hashes, commands, and independent reruns.
+
+## Whitepaper-claim language
+
+Safe wording:
+
+The GilgameshCaw/Caw whitepaper is useful because it gives the review a checklist.
+
+It claims renounced ownership, no proxies, no multisig, calldata recovery, constrained PathwayExpander, LayerZero archive replication, challenge windows, slashing, and reconstructable history.
+
+Those claims are testable.
+
+This review does not treat the whitepaper as false.
+
+This review also does not treat the whitepaper as proof by itself.
+
+A whitepaper is not deployed bytecode.
+
+A contract on `master` is not a verified deployed contract.
+
+A future renounce is not a current closed control surface.
+
+A design description is not an empty-database rebuild.
+
+The correct status is:
+
+serious specification, final proof pending.
+
+serious specification, final proof pending.
