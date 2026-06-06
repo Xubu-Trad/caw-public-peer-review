@@ -1,0 +1,36 @@
+PATHWAYEXPANDER_CLAIM_FINDING_V1
+
+CLAIM:
+PathwayExpander has no setPeer or setDelegate.
+
+SOURCE:
+repo/Caw/solidity/contracts/PathwayExpander.sol
+
+FINDING_SETDELEGATE:
+SUPPORTED_BY_STATIC_SCAN
+
+DETAIL:
+No setDelegate function or delegate rotation call was observed in the captured PathwayExpander source excerpt.
+
+FINDING_SETPEER:
+MISLEADING_AS_STATED
+
+DETAIL:
+PathwayExpander does not expose an external function named setPeer.
+However, it defines IOAppOwner.setPeer(uint32 eid, bytes32 peer) and internally calls o.setPeer(eid, peer) inside _addPeer().
+
+The owner-facing functions are addPeer() and addPeers(), both gated by onlyOwner.
+
+The contract checks that o.peers(eid) == bytes32(0), so the captured source indicates an additions-only model for new eids, not reconfiguration of already-set peers.
+
+CONTROL_SURFACE:
+PathwayExpander remains an owner-controlled peer expansion path until its own ownership is renounced.
+
+REQUIRED_TO_CLOSE:
+Verify deployed PathwayExpander address.
+Verify deployed bytecode matches reviewed source.
+Verify owner() state.
+Verify whether ownership was renounced.
+Verify OApp owner() states.
+Verify peers(eid) state for every supported eid.
+Verify no setDelegate path exists in deployed bytecode or inherited reachable code.

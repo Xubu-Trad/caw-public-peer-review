@@ -1,0 +1,8 @@
+VALIDATOR_GATE_VERDICT_V1
+
+VERDICT=LIKELY_PROFILE_EXISTENCE_GATE
+
+TERMS_FOUND=none
+
+SCOPE=CawActions.sol _requireValidatorExists source excerpt only.
+DOES_NOT_PROVE=live independent validators, deployed-bytecode match, runtime state, RPC separation.

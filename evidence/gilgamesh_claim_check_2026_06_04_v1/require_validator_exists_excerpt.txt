@@ -1,0 +1,43 @@
+1802:   ///      hostile endpoint is ever wired in, nonReentrant does not save
+1803:   ///      us anyway. Pattern violates checks-effects-interactions
+1804:   ///      cosmetically but the reachable attack surface is empty.
+1805:   function _executeWithdrawals(uint256 withdrawFee, uint256 lzTokenAmount) internal {
+1806:     if (_pendingWithdrawIds.length > 0) {
+1807:       cawProfile.setWithdrawable{ value: withdrawFee }(
+1808:         _pendingWithdrawIds, _pendingWithdrawAmounts, lzTokenAmount
+1809:       );
+1810:       delete _pendingWithdrawIds;
+1811:       delete _pendingWithdrawAmounts;
+1812:     }
+1813:   }
+1814: 
+1815:   // ============================================
+1816:   // EXISTING UTILITIES (unchanged)
+1817:   // ============================================
+1818: 
+1819:   /// @dev Reverts when validatorId doesn't correspond to a minted token.
+1820:   ///      Hoisted from inline call sites so the require body bytecode is
+1821:   ///      shared. Audit fix 2026-05-08 (Round 4 CawActions LOW-1).
+1822:   function _requireValidatorExists(uint32 validatorId) internal view {
+1823:     if (cawProfile.ownerOf(validatorId) == address(0)) revert InvalidValidator();
+1824:   }
+1825: 
+1826:   function useCawonce(uint32 senderId, uint256 cawonce) internal {
+1827:     uint256 word = cawonce >> 8;
+1828:     uint256 bit = cawonce & 0xff;
+1829:     // Compute new word locally and check completeness off the freshly-computed
+1830:     // value — saves a redundant warm SLOAD of usedCawonce[senderId][word]
+1831:     // versus the older reload-after-write pattern.
+1832:     uint256 newWord = usedCawonce[senderId][word] | (1 << bit);
+1833:     usedCawonce[senderId][word] = newWord;
+1834:     if (newWord == type(uint256).max) {
+1835:       currentCawonceMap[senderId] = word + 1;
+1836:     }
+1837:   }
+1838: 
+1839:   function nextCawonce(uint32 senderId) public view returns (uint256) {
+1840:     uint256 currentMap = currentCawonceMap[senderId];
+1841:     uint256 word = usedCawonce[senderId][currentMap];
+1842:     if (word == 0) return currentMap * 256;
+1843:     uint256 nextSlot;
+1844:     for (nextSlot = 0; nextSlot < 256; ) {
