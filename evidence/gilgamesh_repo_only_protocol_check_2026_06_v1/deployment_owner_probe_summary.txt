@@ -1,0 +1,32 @@
+DEPLOYMENT OWNER PROBE SUMMARY
+
+table rows
+22
+
+nonzero owners
+testnet  L1  CawProfile         0x9fcbb3d6880cD3293F1a731Fe6c958a6621a74bF  sepolia       46436  0xF71338f3eAa483aA66125598B09BA1988e694a95 
+testnet  L1  CawProfileL2       0xa99936edD087cE11824232ebD83B036C90163688  sepolia       39460  0xF71338f3eAa483aA66125598B09BA1988e694a95 
+testnet  L1  CawProfileURI      0x9CEffADC838a39D10a241d9A473844Ef0cB6274f  sepolia       21412  0xF71338f3eAa483aA66125598B09BA1988e694a95 
+testnet  L1  CawActions         0xD20bE35D2365C0f7DaF563A47b29eB5a165C2007  sepolia       33354  0xF71338f3eAa483aA66125598B09BA1988e694a95 
+testnet  L2  CawProfileL2       0x0c3e245f3939B4D9f30e088988dD9D7C8F86b11d  base_sepolia  39460  0xF71338f3eAa483aA66125598B09BA1988e694a95 
+testnet  L2  CawActions         0x5674e4658b988Ed9337DD0CAa493C6aA908006af  base_sepolia  33354  0xF71338f3eAa483aA66125598B09BA1988e694a95 
+testnet  L2  CawActionsArchive  0x3b2A9ac4f274eE6E73CbAD198F80f455e70C3C05  base_sepolia  19712  0xF71338f3eAa483aA66125598B09BA1988e694a95 
+testnet  L2  CawChallengeRelay  0x8195A9a8a97658672d5384e19a763804D6E16639  base_sepolia  13046  0xF71338f3eAa483aA66125598B09BA1988e694a95 
+
+zero owners
+testnet  L2b  CawChallengeRelay  0x454450aA713A99B06EE4aA05Ede5d80ca1bd3075  base_sepolia  30864  0x0000000000000000000000000000000000000000 
+
+owner probe errors
+testnet  L1   MintableCaw            0x56817dc696448135203C0556f702c6a953260411  sepolia       4790   Error: server returned an error response: error code 3: execution reverted, data: "0x" 
+testnet  L1   CawClientManager       0xA5C515D35C291110090b6edc4278acdEf1424C7a  sepolia       11090  Error: server returned an error response: error code 3: execution reverted, data: "0x" 
+testnet  L1   CawProfileMinter       0x8D65D141a60b1E1136Be62604783AADe8E7290D9  sepolia       6758   Error: server returned an error response: error code 3: execution reverted, data: "0x" 
+testnet  L1   CawProfileQuoter       0x3100B1e890B7a4F3dA0B6Be0388A9b2aFF9c8e79  sepolia       13662  Error: server returned an error response: error code 3: execution reverted, data: "0x" 
+testnet  L1   CawProfileMarketplace  0x6404d1D3D878407a0977d99C832453f235DA67C3  sepolia       22244  Error: server returned an error response: error code 3: execution reverted, data: "0x" 
+testnet  L1   CawFontDataA           0xB7ec882a2a8Fc7aDDa25492b4440da5A0a43B8cf  sepolia       37418  Error: server returned an error response: error code 3: execution reverted, data: "0x" 
+testnet  L1   CawFontDataB           0x1D084Cb5F219627285a83A8ce6F70d4EBa98fBf3  sepolia       25328  Error: server returned an error response: error code 3: execution reverted, data: "0x" 
+testnet  L1   CawBuyAndBurn          0x5860d1E0b1bcE200B273f41716f5dB200FC7f486  sepolia       4244   Error: server returned an error response: error code 3: execution reverted, data: "0x" 
+testnet  L1   MockSwapRouter         0x1b5ee1C13c7D4135Ee4173Ca4D0dF2B847E84199  sepolia       2284   Error: server returned an error response: error code 3: execution reverted, data: "0x" 
+testnet  L2b  CawProfileL2           0xbB9c2A3e8222d13f9E8469BB71cE62c3c2E82941  base_sepolia  2      Error: contract 0xbb9c2a3e8222d13f9e8469bb71ce62c3c2e82941 does not have any code 
+testnet  L2b  CawActions             0x287b249B58bF65411D4Da89dAdEF0e30496a0D4c  base_sepolia  2      Error: contract 0x287b249b58bf65411d4da89dadef0e30496a0d4c does not have any code 
+testnet  L2b  CawActionsArchive      0x5bCbB34f51156D605331f9d6F76a44DEa1d279E5  base_sepolia  35314  Error: server returned an error response: error code 3: execution reverted 
+mainnet  L1   MintableCaw            0xf3b9569F82B18aEf890De263B84189bd33EBe452  sepolia       2      Error: contract 0xf3b9569f82b18aef890de263b84189bd33ebe452 does not have any code 
