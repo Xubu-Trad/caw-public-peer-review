@@ -18,6 +18,40 @@ Has the Gilgamesh build been publicly reviewed, accepted, deployed, and proven c
 
 Current status: **not proven manifesto-complete**.
 
+## August 2026 Current-State Update
+
+The review now includes a pinned V2 testnet wiring and authority update at upstream commit:
+
+`d7a0e05445f13f268b8e0c60a3d4854cb4b206de`
+
+The strongest current findings are:
+
+- upstream deploy state records `0xF71338f3eAa483aA66125598B09BA1988e694a95` as the testnet deployer/operator address,
+- all three reviewed `PathwayExpander` contracts remain owned authority surfaces,
+- the current upstream README describes the protocol as "trustless and decentralized",
+- the reproduced first-party deployment verifier result is `35 passed, 8 failed`, exit code `1`,
+- both current cross-chain Ledgers store the superseded L1 CawProfile as their L1 peer,
+- all three current Ledgers have `cawActions` trust-slot values different from the declared current CawActions deployments,
+- the wrong `cawActions` values match stale prediction-map collisions preserved in upstream `.deploy-state.json`,
+- the July 24 L2 Profile peer defect was reproduced as a stale-prediction deployment-state failure,
+- current checked-in deploy state still preserves a wrong `predictedAddresses.CawProfile` value pointing to `CawProfileLens`, creating a reproduced future redeploy hazard absent another code/state change,
+- public PR `GilgameshCaw/Caw#40` independently documents a separate stale-database redeploy problem reproduced on a real V2 node.
+
+Current bounded classification for the reviewed V2 testnet:
+
+- **system-level decentralization proven:** no,
+- **first-party deploy wiring clean:** no,
+- **official CAW authority proven:** no,
+- **fraud proven:** no,
+- **final mainnet failure proven:** no.
+
+See:
+
+- `docs/current_state_update_2026_08_09.md`
+- `evidence/gilgamesh_v2_live_wiring_2026_08_v1/findings.md`
+- `reproducibility/gilgamesh_v2_live_wiring_2026_08_v1.md`
+- `scripts/check_gilgamesh_v2_live_wiring_2026_08.sh`
+
 ## Manifesto Standard Used Here
 
 The CAW manifesto sets a higher bar than “someone wrote code” or “a testsite has users.”
@@ -300,8 +334,6 @@ The record has been submitted to the official CAW GitHub for acceptance, rejecti
 
 Show the proof. Hash the artifacts. Review in public. Correct what is wrong.
 
-
-
 ## Whitepaper Claims Review
 
 The GilgameshCaw/Caw whitepaper is now recorded as a technical claim source.
@@ -325,7 +357,6 @@ A future renounce is not a current closed control surface.
 
 A design description is not an empty-database rebuild.
 
-
 ## Official CAW GitHub Submission
 
 The peer-review record has been formally submitted to the CAW GitHub for acceptance, rejection, or correction.
@@ -344,4 +375,3 @@ Current submission status:
 
 - submitted by pull request
 - pending acceptance, rejection, or correction
-
