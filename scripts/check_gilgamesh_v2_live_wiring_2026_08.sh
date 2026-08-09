@@ -19,9 +19,13 @@ LEDGER_L1="0xdbBE199f301AF59f471A586975e2Bc64b57F917f"
 LEDGER_L2="0xee2B2E2dE111942b8a1980836894aB1FDa765f24"
 LEDGER_L2B="0x7E10b26635fC907774798fd30cB76AD1777A502A"
 
-EXP_ACT_L1="0x5158eD62E9cB57F2Ddd38B2D841589E4033CCcCc"
-EXP_ACT_L2="0x106e1895c1aa7D6B044c50d7c7F04a46Ea4CABb7"
-EXP_ACT_L2B="0x9e1F62917D9f5D6dc83917565c4e8cbC2BDf6AF2"
+DECLARED_ACT_L1="0x5158eD62E9cB57F2Ddd38B2D841589E4033CCcCc"
+DECLARED_ACT_L2="0x106e1895c1aa7D6B044c50d7c7F04a46Ea4CABb7"
+DECLARED_ACT_L2B="0x9e1F62917D9f5D6dc83917565c4e8cbC2BDf6AF2"
+
+OBSERVED_ACT_L1="0xDA1F1c34Ed283C7aF358Fbb2d2A3A1A27C5Ac1D7"
+OBSERVED_ACT_L2="0x9A3bE72fEe5f5f7b259FB2889e2F65CDf7380D57"
+OBSERVED_ACT_L2B="0xEb0fD584bd1E5793e7fe9eDA33FCA4BEFd65937f"
 
 fail=0
 
@@ -80,7 +84,7 @@ check_owner() {
     fail=$((fail + 1))
     return
   fi
-  expect_addr "$name.owner" "$actual" "$DEPLOYER"
+  expect_addr "$name.owner_is_deployer_operator" "$actual" "$DEPLOYER"
 }
 
 check_peer_old_profile() {
@@ -95,15 +99,16 @@ check_peer_old_profile() {
     return
   fi
   actual=$(bytes32_tail_addr "$raw")
-  expect_addr "$name.peer_l1" "$actual" "$OLD_PROFILE"
-  expect_not_addr "$name.peer_l1_not_current" "$actual" "$CURRENT_PROFILE"
+  expect_addr "$name.peer_is_old_profile" "$actual" "$OLD_PROFILE"
+  expect_not_addr "$name.peer_is_not_current_profile" "$actual" "$CURRENT_PROFILE"
 }
 
-check_caw_actions() {
+check_caw_actions_mismatch() {
   name="$1"
   addr="$2"
   rpc="$3"
-  expected="$4"
+  declared="$4"
+  reproduced_wrong="$5"
   actual=$(cast call "$addr" 'cawActions()(address)' --rpc-url "$rpc" 2>/dev/null)
   rc=$?
   echo "RAW $name cawActions rc=$rc value=$actual"
@@ -111,7 +116,8 @@ check_caw_actions() {
     fail=$((fail + 1))
     return
   fi
-  expect_addr "$name.cawActions_expected" "$actual" "$expected"
+  expect_addr "$name.cawActions_matches_reproduced_wrong_value" "$actual" "$reproduced_wrong"
+  expect_not_addr "$name.cawActions_differs_from_declared_current" "$actual" "$declared"
 }
 
 check_zero_owner() {
@@ -142,11 +148,9 @@ check_owner "PathwayExpander_L2b" "$PE_L2B" "$ARB"
 check_peer_old_profile "Ledger_L2" "$LEDGER_L2" "$BASE"
 check_peer_old_profile "Ledger_L2b" "$LEDGER_L2B" "$ARB"
 
-# These three checks intentionally compare against the declared current CawActions.
-# A FAIL reproduces the wiring mismatch finding.
-check_caw_actions "Ledger_L1" "$LEDGER_L1" "$SEP" "$EXP_ACT_L1"
-check_caw_actions "Ledger_L2" "$LEDGER_L2" "$BASE" "$EXP_ACT_L2"
-check_caw_actions "Ledger_L2b" "$LEDGER_L2B" "$ARB" "$EXP_ACT_L2B"
+check_caw_actions_mismatch "Ledger_L1" "$LEDGER_L1" "$SEP" "$DECLARED_ACT_L1" "$OBSERVED_ACT_L1"
+check_caw_actions_mismatch "Ledger_L2" "$LEDGER_L2" "$BASE" "$DECLARED_ACT_L2" "$OBSERVED_ACT_L2"
+check_caw_actions_mismatch "Ledger_L2b" "$LEDGER_L2B" "$ARB" "$DECLARED_ACT_L2B" "$OBSERVED_ACT_L2B"
 
 check_zero_owner "Ledger_L1" "$LEDGER_L1" "$SEP"
 check_zero_owner "Ledger_L2" "$LEDGER_L2" "$BASE"
@@ -154,9 +158,9 @@ check_zero_owner "Ledger_L2b" "$LEDGER_L2B" "$ARB"
 
 echo "FAIL_COUNT=$fail"
 if [ "$fail" -eq 0 ]; then
-  echo "RESULT=ALL_EXPECTED_CHECKS_PASSED"
+  echo "RESULT=REPRODUCED_REVIEW_FINDINGS"
   exit 0
 fi
 
-echo "RESULT=ONE_OR_MORE_EXPECTED_CHECKS_FAILED"
+echo "RESULT=REPRODUCTION_DIVERGED_OR_RPC_FAILED"
 exit 1
