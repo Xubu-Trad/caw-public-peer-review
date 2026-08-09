@@ -10,6 +10,8 @@ ARB="https://sepolia-rollup.arbitrum.io/rpc"
 DEPLOYER="0xF71338f3eAa483aA66125598B09BA1988e694a95"
 OLD_PROFILE="0x4F853523102577dDaf5fdbc823EDdCB13b35C543"
 CURRENT_PROFILE="0x61C07717210988df782E779cAc8AC67633Ed2a2e"
+PROFILE_MINTER="0xDA1F1c34Ed283C7aF358Fbb2d2A3A1A27C5Ac1D7"
+NETWORK_MANAGER="0x2Ce2d752675bf1Ee927D71090Fba50348B4BBB0e"
 
 PE_L1="0x6c10c9cE2ed0652b046C6C6579E29342723d4d7F"
 PE_L2="0xb8e061DB410464e317b9D594Df7697B01A62Af25"
@@ -29,110 +31,19 @@ OBSERVED_ACT_L2B="0xEb0fD584bd1E5793e7fe9eDA33FCA4BEFd65937f"
 
 fail=0
 
-need_cast() {
-  command -v cast >/dev/null 2>&1
-  rc=$?
-  if [ "$rc" -ne 0 ]; then
-    echo "ERROR cast not found"
-    return 1
-  fi
-  return 0
-}
+need_cast() { command -v cast >/dev/null 2>&1 || { echo "ERROR cast not found"; return 1; }; }
+norm_addr() { printf '%s' "$1" | tr '[:upper:]' '[:lower:]'; }
+expect_addr() { name="$1"; actual="$2"; expected="$3"; if [ "$(norm_addr "$actual")" = "$(norm_addr "$expected")" ]; then echo "PASS $name actual=$actual expected=$expected"; else echo "FAIL $name actual=$actual expected=$expected"; fail=$((fail+1)); fi; }
+expect_not_addr() { name="$1"; actual="$2"; not_expected="$3"; if [ "$(norm_addr "$actual")" != "$(norm_addr "$not_expected")" ]; then echo "PASS $name actual=$actual not_expected=$not_expected"; else echo "FAIL $name actual=$actual not_expected=$not_expected"; fail=$((fail+1)); fi; }
+bytes32_tail_addr() { v=$(printf '%s' "$1" | sed 's/^0x//'); tail40=$(printf '%s' "$v" | tail -c 40); printf '0x%s' "$tail40"; }
 
-norm_addr() {
-  printf '%s' "$1" | tr '[:upper:]' '[:lower:]'
-}
+read_addr() { addr="$1"; sig="$2"; rpc="$3"; cast call "$addr" "$sig" --rpc-url "$rpc" 2>/dev/null; }
 
-expect_addr() {
-  name="$1"
-  actual="$2"
-  expected="$3"
-  if [ "$(norm_addr "$actual")" = "$(norm_addr "$expected")" ]; then
-    echo "PASS $name actual=$actual expected=$expected"
-  else
-    echo "FAIL $name actual=$actual expected=$expected"
-    fail=$((fail + 1))
-  fi
-}
-
-expect_not_addr() {
-  name="$1"
-  actual="$2"
-  not_expected="$3"
-  if [ "$(norm_addr "$actual")" != "$(norm_addr "$not_expected")" ]; then
-    echo "PASS $name actual=$actual not_expected=$not_expected"
-  else
-    echo "FAIL $name actual=$actual not_expected=$not_expected"
-    fail=$((fail + 1))
-  fi
-}
-
-bytes32_tail_addr() {
-  v=$(printf '%s' "$1" | sed 's/^0x//')
-  tail40=$(printf '%s' "$v" | tail -c 41)
-  printf '0x%s' "$tail40"
-}
-
-check_owner() {
-  name="$1"
-  addr="$2"
-  rpc="$3"
-  actual=$(cast call "$addr" 'owner()(address)' --rpc-url "$rpc" 2>/dev/null)
-  rc=$?
-  echo "RAW $name owner rc=$rc value=$actual"
-  if [ "$rc" -ne 0 ]; then
-    fail=$((fail + 1))
-    return
-  fi
-  expect_addr "$name.owner_is_deployer_operator" "$actual" "$DEPLOYER"
-}
-
-check_peer_old_profile() {
-  name="$1"
-  addr="$2"
-  rpc="$3"
-  raw=$(cast call "$addr" 'peers(uint32)(bytes32)' 40161 --rpc-url "$rpc" 2>/dev/null)
-  rc=$?
-  echo "RAW $name peer rc=$rc value=$raw"
-  if [ "$rc" -ne 0 ]; then
-    fail=$((fail + 1))
-    return
-  fi
-  actual=$(bytes32_tail_addr "$raw")
-  expect_addr "$name.peer_is_old_profile" "$actual" "$OLD_PROFILE"
-  expect_not_addr "$name.peer_is_not_current_profile" "$actual" "$CURRENT_PROFILE"
-}
-
-check_caw_actions_mismatch() {
-  name="$1"
-  addr="$2"
-  rpc="$3"
-  declared="$4"
-  reproduced_wrong="$5"
-  actual=$(cast call "$addr" 'cawActions()(address)' --rpc-url "$rpc" 2>/dev/null)
-  rc=$?
-  echo "RAW $name cawActions rc=$rc value=$actual"
-  if [ "$rc" -ne 0 ]; then
-    fail=$((fail + 1))
-    return
-  fi
-  expect_addr "$name.cawActions_matches_reproduced_wrong_value" "$actual" "$reproduced_wrong"
-  expect_not_addr "$name.cawActions_differs_from_declared_current" "$actual" "$declared"
-}
-
-check_zero_owner() {
-  name="$1"
-  addr="$2"
-  rpc="$3"
-  actual=$(cast call "$addr" 'owner()(address)' --rpc-url "$rpc" 2>/dev/null)
-  rc=$?
-  echo "RAW $name owner rc=$rc value=$actual"
-  if [ "$rc" -ne 0 ]; then
-    fail=$((fail + 1))
-    return
-  fi
-  expect_addr "$name.owner_zero" "$actual" "0x0000000000000000000000000000000000000000"
-}
+check_owner() { name="$1"; addr="$2"; rpc="$3"; actual=$(read_addr "$addr" 'owner()(address)' "$rpc"); rc=$?; echo "RAW $name owner rc=$rc value=$actual"; [ "$rc" -eq 0 ] && expect_addr "$name.owner_is_deployer_operator" "$actual" "$DEPLOYER" || fail=$((fail+1)); }
+check_zero_owner() { name="$1"; addr="$2"; rpc="$3"; actual=$(read_addr "$addr" 'owner()(address)' "$rpc"); rc=$?; echo "RAW $name owner rc=$rc value=$actual"; [ "$rc" -eq 0 ] && expect_addr "$name.owner_zero" "$actual" "0x0000000000000000000000000000000000000000" || fail=$((fail+1)); }
+check_peer_old_profile() { name="$1"; addr="$2"; rpc="$3"; raw=$(cast call "$addr" 'peers(uint32)(bytes32)' 40161 --rpc-url "$rpc" 2>/dev/null); rc=$?; echo "RAW $name peer rc=$rc value=$raw"; if [ "$rc" -ne 0 ]; then fail=$((fail+1)); return; fi; actual=$(bytes32_tail_addr "$raw"); expect_addr "$name.peer_is_old_profile" "$actual" "$OLD_PROFILE"; expect_not_addr "$name.peer_is_not_current_profile" "$actual" "$CURRENT_PROFILE"; }
+check_caw_actions_mismatch() { name="$1"; addr="$2"; rpc="$3"; declared="$4"; reproduced_wrong="$5"; actual=$(read_addr "$addr" 'cawActions()(address)' "$rpc"); rc=$?; echo "RAW $name cawActions rc=$rc value=$actual"; if [ "$rc" -ne 0 ]; then fail=$((fail+1)); return; fi; expect_addr "$name.cawActions_matches_reproduced_wrong_value" "$actual" "$reproduced_wrong"; expect_not_addr "$name.cawActions_differs_from_declared_current" "$actual" "$declared"; }
+check_expected_mismatch() { name="$1"; addr="$2"; sig="$3"; rpc="$4"; expected="$5"; actual=$(read_addr "$addr" "$sig" "$rpc"); rc=$?; echo "RAW $name rc=$rc value=$actual expected=$expected"; if [ "$rc" -ne 0 ]; then fail=$((fail+1)); return; fi; expect_not_addr "$name.reproduces_first_party_mismatch" "$actual" "$expected"; }
 
 need_cast || exit 2
 
@@ -144,6 +55,11 @@ echo "UPSTREAM_REF=d7a0e05445f13f268b8e0c60a3d4854cb4b206de"
 check_owner "PathwayExpander_L1" "$PE_L1" "$SEP"
 check_owner "PathwayExpander_L2" "$PE_L2" "$BASE"
 check_owner "PathwayExpander_L2b" "$PE_L2B" "$ARB"
+
+# Three additional first-party verifier failures.
+check_expected_mismatch "CawNetworkManager.cawProfile" "$NETWORK_MANAGER" 'cawProfile()(address)' "$SEP" "$CURRENT_PROFILE"
+check_expected_mismatch "CawNetworkManager.minter" "$NETWORK_MANAGER" 'minter()(address)' "$SEP" "$PROFILE_MINTER"
+check_expected_mismatch "Ledger_L1.cawProfile" "$LEDGER_L1" 'cawProfile()(address)' "$SEP" "$CURRENT_PROFILE"
 
 check_peer_old_profile "Ledger_L2" "$LEDGER_L2" "$BASE"
 check_peer_old_profile "Ledger_L2b" "$LEDGER_L2B" "$ARB"
