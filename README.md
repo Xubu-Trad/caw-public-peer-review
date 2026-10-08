@@ -18,6 +18,30 @@ Has the Gilgamesh build been publicly reviewed, accepted, deployed, and proven c
 
 Current status: **not proven manifesto-complete**.
 
+
+## October 7, 2026 Active Engineering Handoff
+
+The active engineering lane has moved substantially beyond the August snapshot.
+
+A detailed continuation handoff now records the current state of upstream PRs #221 and #276, the combined local validation, the reproduced sealed Phase 7 failure-boundary defect, the exact local artifact hashes, failed-but-preserved evidence-seal attempts, and the corrective worktree that a new reviewer should continue from.
+
+**Current operational status:**
+
+- PR #221 head: `f0815a8e0ced5beb4cf195798518f21f8344d613`
+- PR #276 head: `d32727842fa242411068fa1ed0d8d8b495a7d0f0`
+- historical combined integration patch: `c93ec642a94045734d0151c659afb9848d3d3082a6104729068ffc7f1e8a82d3`
+- the combined artifact passed extensive local compile, Foundry, reconciliation, verifier, pin/finalize, Phase 7 and freshness checks
+- a later reviewer question exposed a real sealed-generation failure-boundary gap in `deployPhase()`
+- that gap is now deterministically reproduced
+- the old combined artifact must **not** be treated as current merge-ready proof
+- the active next task is a narrowly scoped #221 `deploy.js` correction that adds a generation-wide sealed pre-finalization barrier while preserving interrupted-seal recovery
+
+Start here before continuing the active engineering work:
+
+- `docs/current_state_update_2026_10_07.md`
+
+The August state document remains preserved as historical context.
+
 ## August 2026 Current-State Update
 
 The review now includes a pinned V2 testnet wiring and authority update at upstream commit:
